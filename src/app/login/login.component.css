@@ -6,8 +6,10 @@
   align-items: center;
   height: 100vh;
   caret-color: transparent;
+
  
 }
+
 
 
   input[type=text],input[type=password], select, textarea {
@@ -58,8 +60,6 @@
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.42);
   }
   
- 
-  
   .form-control:focus::placeholder {
     position: absolute;
     top: 0;
@@ -79,8 +79,6 @@
     transform: translate(0, -50%);
     transition: all 0.2s ease-in-out;
   }
-  
-  
   .row {
     display: flex;
     justify-content: center;
@@ -97,7 +95,6 @@
   font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   }
   
-
   .moving-text {
     position: relative;
     animation-name: move-left-to-right;
@@ -209,5 +206,8 @@ button[type=submit]:hover {
     transform: rotate(360deg);
   }
 }
-
+.container-fluid{
+  margin: 0px;
+  padding: 0px;
+}
 /*-------------------*/

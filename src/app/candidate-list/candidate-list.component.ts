@@ -130,14 +130,6 @@ export class CandidateListComponent implements OnInit, IDeactivate {
   cancel() {
     this.route.navigate(['/candidatedetails']);
   }
-  // canDeactivate(): Promise<boolean> | boolean {
-  //   const confirmResult = confirm('Are you sure you want to leave this page ? ');
-  //   if (confirmResult === true) {
-  //   return true;
-  //   } else {
-  //   return false;
-  //   }
-  //   }
 
   canExit() {
     if (this.candidateform.dirty) {

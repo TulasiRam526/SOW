@@ -4,7 +4,7 @@
      
     </div>
   </div>
-
+<div class="container-fluid">
 <div class="login-container">
     <div class="card">
        
@@ -16,25 +16,26 @@
             <div class="form-group row">
               
                 
-                    <label for="loginName" class="col-sm-4 col-form-label">User Name</label>
+                    <label for="loginName" class="col-sm-4 col-form-label">Email Id</label>
                 
                 <div class="col-sm-8">
                     <input type="text" name="loginName" class="form-control" id="loginName" formControlName="loginName"
                         placeholder="Enter User Name" required>
-                    <div *ngIf="(f.loginName.touched || submitted) && f.loginName.invalid" class="text-danger">
-                        <div *ngIf="f.loginName.errors.required">*User Name is required.</div>
+                    <div *ngIf="(f.loginName.touched) && f.loginName.invalid" class="text-danger">
+                        <div *ngIf="f.loginName.errors.required"><small>*User Name is required</small></div>
                     </div>
                 </div>
             </div>
             <div class="form-group row">
+                
                
                     <label for="loginPassword" class="col-sm-4 col-form-label">Password</label>
                 
                 <div class="col-sm-8">
                     <input type="password" name="loginPassword" class="form-control" id="loginPassword" formControlName="loginPassword"
                         placeholder="Enter Password" required>
-                    <div *ngIf="(f.loginPassword.touched || submitted) && f.loginPassword.invalid" class="text-danger">
-                        <div *ngIf="f.loginPassword.errors.required">*Login Password is required.</div>
+                    <div *ngIf="(f.loginPassword.touched) && f.loginPassword.invalid" class="text-danger">
+                        <div *ngIf="f.loginPassword.errors.required"> <small>*Login Password is required</small></div>
                     </div>
                 </div>
             </div>
@@ -42,11 +43,10 @@
             <div class="form-group row">
                <div class="footer">
                 <button type="submit"  class="btn btn-succes">Submit</button>
-               </div>
-
-                
+               </div>  
             </div>
             <p *ngIf="errorMessage" class="moving-text">{{ errorMessage }}</p>
         </form>
     </div>
+</div>
 </div>

@@ -33,13 +33,13 @@
         <div class="modal-body">
           
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">From Date:</label>
+                <label class="col-sm-3 col-form-label">From Date</label>
                
                 <input type="date" class="form-control" [(ngModel)]="fromDate" max="{{this.startDate}}">
               
             </div>
             <div class="form-group row">
-                <label class="col-sm-3 col-form-label">To Date:</label>
+                <label class="col-sm-3 col-form-label">To Date</label>
                 <input type="date" class="form-control" [(ngModel)]="endDate" max="{{this.startDate}}" min="{{this.fromDate}}">
               </div>  
         </div>
@@ -87,11 +87,9 @@
                         <td class="tableborder">{{candidate.isInternal?'Yes':'No'}}</td>
                         <td class="tableborder" *ngIf="isAuthor">
                             <i class="bi bi-pencil-square" (click)="editDetails(candidate)" title="Edit"></i>&nbsp;
-                            <!-- <button (click)="editDetails(candidate)"><img src="../../assets/icons/edit.ico"
-                                    class="icons"></button> &nbsp; -->
+                           
                                     <i class="bi bi-trash" (click)="deleteDetails(candidate)" title="Delete"></i>
-                            <!-- <button (click)="deleteDetails(candidate)"><img src="../../assets/icons/delete.png"
-                                    class="icons" /></button> -->
+                           
                         </td>
                     </tr>
                 </tbody>

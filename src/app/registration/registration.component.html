@@ -36,11 +36,9 @@
                         <td class="tableborder">{{map.roleName}}</td>
                         <td class="tableborder" *ngIf="isAuthor">
                             <i class="bi bi-pencil-square" data-toggle="modal" data-target="#mappingModal" (click)="editDetails(map)" title="Edit"></i>&nbsp;
-                            <!-- <button (click)="editDetails(map)"><img src="../../assets/icons/edit.ico"
-                                    class="icons"></button> &nbsp; -->
+                           
                                     <i class="bi bi-trash" (click)="deleteDetails(map)" title="Delete"></i>&nbsp;
-                            <!-- <button (click)="deleteDetails(map)"><img src="../../assets/icons/delete.png"
-                                    class="icons" /></button> -->
+                           
                                     <i *ngIf="lock" class="bi bi-lock"(click)="lockAccount()"></i>
                                     <i *ngIf="!lock" class="bi bi-unlock"(click)="lockAccount()"></i>&nbsp;
                                     <i class="bi bi-arrow-repeat" title="Reset" (click)="resetAccount()"></i>
@@ -102,7 +100,7 @@
                             placeholder="Enter User Name" required>
                         <div *ngIf="(f.userName.touched ) && f.userName.invalid"
                             class="text-danger">
-                            <div *ngIf="f.userName.errors.required">*User Name is required</div>
+                            <div *ngIf="f.userName.errors.required"><small>*User Name is required</small></div>
                         </div>
                     </div>
                 </div>
@@ -114,7 +112,7 @@
                             placeholder="Enter Email Id" required>
                         <div *ngIf="(f.emailId.touched ) && f.emailId.invalid"
                             class="text-danger">
-                            <div *ngIf="f.emailId.errors.required">*Email ID is required.</div>
+                            <div *ngIf="f.emailId.errors.required"><small>*Email ID is required</small></div>
                         </div>
                     </div>
                 </div>
@@ -123,11 +121,11 @@
                     
                    <div class="col-sm-8 col-md-7 mb-1 ">
                         <select id="role" name="role" class="form-control" formControlName="role">
-                            <option disabled>Select a role:</option>
+                            <option value="" disabled selected>Select a role</option>
                             <option *ngFor="let roles of roleName" value="{{roles.roleId}}">{{roles.roleName}}</option> 
                         </select>
                         <div *ngIf="(f.role.touched ) && f.role.invalid" class="text-danger">
-                            <div *ngIf="f.role.errors.required">*Role is required.</div>
+                            <div *ngIf="f.role.errors.required"><small>*Role is required</small></div>
                         </div>
                     </div>
                 </div>

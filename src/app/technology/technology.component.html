@@ -97,7 +97,7 @@
                                         formControlName="technologyName" placeholder="Enter Technology Name" required>
                                     <div *ngIf="(f.technologyName.touched) && f.technologyName.invalid"
                                         class="text-danger">
-                                        <div *ngIf="f.technologyName.errors.required">*Technology Name is required</div>
+                                        <div *ngIf="f.technologyName.errors.required"><small>*Technology Name is required</small></div>
                                     </div>
                                 </div>
                             </div>
@@ -109,13 +109,13 @@
 
                                     <select id="domainId" class="form-control" name="domainId"
                                         formControlName="domainId">
-                                        <option disabled>Select a Domain</option>
+                                        <option value="" disabled selected>Select a Domain</option>
                                         <option *ngFor="let domain of DomainList" value="{{domain.domainId}}">
                                             {{domain.domainName}}
                                         </option>
                                     </select>
                                     <div *ngIf="(f.domainId.touched) && f.domainId.invalid" class="text-danger">
-                                        <div *ngIf="f.domainId.errors.required">*Domain is required.</div>
+                                        <div *ngIf="f.domainId.errors.required"><small>*Domain is required</small></div>
                                     </div>
                                 </div>
                             </div>

@@ -41,11 +41,9 @@
                         <td class="tableborder">{{map.statusName}}</td>
                         <td class="tableborder" *ngIf="isAuthor">
                             <i class="bi bi-pencil-square" data-toggle="modal" data-target="#mappingModal" (click)="editDetails(map)" title="Edit"></i>&nbsp;
-                            <!-- <button (click)="editDetails(map)"><img src="../../assets/icons/edit.ico"
-                                    class="icons"></button> &nbsp; -->
+                           
                                     <i class="bi bi-trash" (click)="deleteDetails(map)" title="Delete"></i>
-                            <!-- <button (click)="deleteDetails(map)"><img src="../../assets/icons/delete.png"
-                                    class="icons" /></button> -->
+                           
                                     
                         </td>
                         
@@ -99,13 +97,13 @@
               <label class="col-sm-4 col-md-4 mb-1 ml-3 col-form-label" for="candidateId">Candidate Name</label>
               <div  class="col-sm-8 col-md-7 mb-1 ">
                 <select id="candidateId"  class="form-control" name="candidateId" formControlName="candidateId">
-                  <option disabled>Select a Candidate</option>
+                  <option value="" disabled selected>Select a Candidate</option>
                   <option *ngFor="let candidate of CandidateData" value="{{candidate.candidateId}}">
                     {{candidate.candidateName}}
                   </option>
                 </select>
                 <div *ngIf="(f.candidateId.touched) && f.candidateId.invalid" class="text-danger">
-                  <div *ngIf="f.candidateId.errors.required">*CandidateName is required.</div>
+                  <div *ngIf="f.candidateId.errors.required"><small>*CandidateName is required</small></div>
                 </div>
               </div>
             </div>
@@ -113,24 +111,24 @@
               <label  class="col-sm-4 col-md-4 mb-1 ml-3 col-form-label" for="sowId">SO Name</label>
               <div  class="col-sm-8 col-md-7 mb-1 ">
                 <select id="sowId"  class="form-control" name="sowId" formControlName="sowId">
-                  <option disabled>Select a SO:</option>
+                  <option value="" disabled selected>Select a SO</option>
                   <option *ngFor="let sow of SOData" value="{{sow.sowId}}">{{sow.soName}}</option>
                 </select>
                 <div *ngIf="(f.sowId.touched) && f.sowId.invalid" class="text-danger">
-                  <div *ngIf="f.sowId.errors.required">*SO Name is required.</div>
+                  <div *ngIf="f.sowId.errors.required"><small>*SO Name is required</small></div>
                 </div>
               </div>
             </div>
             <div class="form-group row">
-              <label  class="col-sm-4 col-md-4 mb-1 ml-3 col-form-label" for="statusId">Status:</label>
+              <label  class="col-sm-4 col-md-4 mb-1 ml-3 col-form-label" for="statusId">Status</label>
               <div  class="col-sm-8 col-md-7 mb-1 ">
                 <select id="statusId"  class="form-control" name="statusId" formControlName="statusId">
-                  <option disabled>Select a Status:</option>
+                  <option value="" disabled selected>Select a Status</option>
                   <option *ngFor="let status of StatusData" value="{{status.statusId}}">{{status.statusName}}
                   </option>
                 </select>
                 <div *ngIf="(f.statusId.touched ) && f.statusId.invalid" class="text-danger">
-                  <div *ngIf="f.statusId.errors.required">*Status is required.</div>
+                  <div *ngIf="f.statusId.errors.required"><small>*Status is required</small></div>
                 </div>
               </div>
             </div>
@@ -145,33 +143,6 @@
     </div>
   </div>
 </div>  
-
-
-<!-- Mapping Modal -->
-<!-- <div class="modal fade" id="mappingModal" tabindex="-1" role="dialog" aria-labelledby="mappingModalLabel" aria-hidden="true">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="mappingModalLabel">Delete a Candidate</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-      </div>
-      <div>
-    
-        <div class="modal-body">
-         <div class="detete">Do You Want to Delete ? </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          <button   (click)="deleteDetails(map)" title="Delete"class="btn btn-primary">Submit</button>
-        </div>
-      
-        
-  </div>
-  </div>
-</div>
-</div>  
- -->
 
 
 
